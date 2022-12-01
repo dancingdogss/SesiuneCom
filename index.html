@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Site</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<header>
+    <div class = "logo" id="Logo">
+
+        <h1><img src="C:\Users\artur\OneDrive\Desktop\try3\images\essentials\logo-removebg-preview (1).png" id = "logo" alt="logo"/></h1>
+    
+    </div>
+  
+</header>
+<body>
+<div class="container" id="imgBox">
+
+    <div id="prevText"></div>
+    <textarea id="textBox" placeholder="Add caption:"></textarea>
+
+    <input type="file" accept="image/*" name="image" id="file" style ="display: none"
+    onchange="loadFile(event)">
+    <label for="file"><img src="images/upload.png" class="upload-icon"></label>
+ 
+</div>
+
+
+
+<script>
+    var textBox=document.getElementById("textBox");
+    var imgBox=document.getElementById("imgBox");
+
+    textBox.onekeyup = textBox.onkeypress = function(){
+        document.getElementById("prevText").innerHTML = this.value;
+    }
+
+
+    var loadFile = function(event){
+        imgBox.style.backgroundImage = "url(" +URL.createObjectURL(event.target.files[0]) + ")";
+        
+    }
+
+
+
+</script>
+
+<style>
+    body{
+        background-image: url('images/maxresdefault.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    
+</style>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+let selectedFile= document.getElementById('uploadFile').files[0];
